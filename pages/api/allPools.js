@@ -6,9 +6,7 @@ import {
 } from "folks-finance-js-sdk/src";
 import { algodClient, indexerClient, sender } from "@/utils/config";
 
-BigInt.prototype.toJSON = function () {
-  return this.toString();
-};
+
 
 export default async function handler(req, res) {
   let allPoolsInfo = [];

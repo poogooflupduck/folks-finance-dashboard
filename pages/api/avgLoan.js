@@ -1,4 +1,3 @@
-import { SuggestedParams, waitForConfirmation } from "algosdk";
 import {
   getConversionRate,
   getLoansInfo,
@@ -20,7 +19,6 @@ import { algodClient, indexerClient, sender } from "@/utils/config";
 export default async function handler(req, res) {
   const oracle = TestnetOracle;
   const tokenPair = TestnetTokenPairs["ALGO-USDC"];
-  const reserveAddress = TestnetReserveAddress;
   const { collateralPool, borrowPool } = tokenPair;
 
   // get conversion rate
@@ -29,9 +27,6 @@ export default async function handler(req, res) {
     borrowPool.assetId,
   ]);
 
-  console.log(oraclePrices);
-
-  console.log(TestnetPools);
   const conversionRate = getConversionRate(
     oraclePrices.prices[collateralPool.assetId].price,
     oraclePrices.prices[borrowPool.assetId].price
@@ -54,8 +49,10 @@ export default async function handler(req, res) {
     borrowPoolInfo,
     conversionRate
   );
-  let loans = loansInfo.loans;
-  let nextToken = loansInfo.nextToken;
-
-  res.status(200).json({ message: collateralPoolInfo });
+  let total = BigInt(0);
+  for (let loan of loansInfo.loans) {
+    total += loan.collateralBalance;
+  }
+  console.log(total);
+  res.status(200).json({ message: JSON.stringify(loansInfo) });
 }

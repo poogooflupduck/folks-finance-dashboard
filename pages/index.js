@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import SwrData from "@/components/SwrData";
 
 import {
   Box,
@@ -10,12 +9,13 @@ import {
   Text,
   Button,
   Flex,
+  Heading,
 } from "@chakra-ui/react";
 
 import NavBar from "@/components/NavBar";
+import TvlBar from "@/components/TvlBar";
 
 const Home = () => {
-  const { data, isLoading, isError } = SwrData("/api/getBorrowTotal");
   return (
     <div>
       <Head>
@@ -26,9 +26,18 @@ const Home = () => {
 
       <NavBar />
 
-      <main p={2}>
-        <h1>{data && JSON.stringify(data)}</h1>
+      <Grid templateColumns={"repeat(5, 1fr)"} gap={2} p={2}>
+        <GridItem
+          colSpan={{ base: 5, sm: 5, md: 5, lg: 3 }}
+          p={6}
+          borderWidth={1}
+          borderRadius="md"
+        >
+          <TvlBar />
+        </GridItem>
+      </Grid>
 
+      <main p={2}>
         {/* 
         <Grid templateColumns={"repeat(5, 1fr)"} gap={2}>
           <GridItem
