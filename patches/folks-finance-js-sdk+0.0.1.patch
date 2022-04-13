@@ -1,0 +1,48 @@
+diff --git a/node_modules/folks-finance-js-sdk/src/v1/lend/constants.ts b/node_modules/folks-finance-js-sdk/src/v1/lend/constants.ts
+index 9cc17e4..5de8ba8 100644
+--- a/node_modules/folks-finance-js-sdk/src/v1/lend/constants.ts
++++ b/node_modules/folks-finance-js-sdk/src/v1/lend/constants.ts
+@@ -1,7 +1,7 @@
+ import { Oracle, Pool, TokenPair } from "./types";
+ 
+-type TestnetPoolsKey = "ALGO" | "USDC" | "USDt" | "goBTC" | "goETH" | "xUSD";
+-const TestnetPools: Record<TestnetPoolsKey, Pool> = {
++export type TestnetPoolsKey = "ALGO" | "USDC" | "USDt" | "goBTC" | "goETH" | "xUSD";
++export const TestnetPools: Record<TestnetPoolsKey, Pool> = {
+   "ALGO": {
+     appId: 79413571,
+     assetId: 0,
+@@ -47,8 +47,8 @@ const TestnetPools: Record<TestnetPoolsKey, Pool> = {
+ };
+ 
+ // CollateralPool-BorrowPool
+-type TestnetTokenPairsKey = "ALGO-USDC" | "ALGO-USDt" | "ALGO-goBTC" | "ALGO-goETH" | "ALGO-xUSD" | "USDC-ALGO" | "USDC-USDt" | "USDC-goBTC" | "USDC-goETH" | "USDC-xUSD" | "USDt-ALGO" | "USDt-USDC" | "USDt-goBTC" | "USDt-goETH" | "USDt-xUSD" | "goBTC-ALGO" | "goBTC-USDC" | "goBTC-USDt" | "goBTC-goETH" | "goBTC-xUSD" | "goETH-ALGO"| "goETH-USDC"| "goETH-USDt"| "goETH-goBTC" | "goETH-xUSD" | "xUSD-ALGO" | "xUSD-USDC"| "xUSD-USDt"| "xUSD-goBTC"| "xUSD-goETH";
+-const TestnetTokenPairs: Record<TestnetTokenPairsKey, TokenPair> = {
++export type TestnetTokenPairsKey = "ALGO-USDC" | "ALGO-USDt" | "ALGO-goBTC" | "ALGO-goETH" | "ALGO-xUSD" | "USDC-ALGO" | "USDC-USDt" | "USDC-goBTC" | "USDC-goETH" | "USDC-xUSD" | "USDt-ALGO" | "USDt-USDC" | "USDt-goBTC" | "USDt-goETH" | "USDt-xUSD" | "goBTC-ALGO" | "goBTC-USDC" | "goBTC-USDt" | "goBTC-goETH" | "goBTC-xUSD" | "goETH-ALGO"| "goETH-USDC"| "goETH-USDt"| "goETH-goBTC" | "goETH-xUSD" | "xUSD-ALGO" | "xUSD-USDC"| "xUSD-USDt"| "xUSD-goBTC"| "xUSD-goETH";
++export const TestnetTokenPairs: Record<TestnetTokenPairsKey, TokenPair> = {
+   "ALGO-USDC": {
+     appId: 79423184,
+     collateralPool: TestnetPools.ALGO,
+@@ -231,20 +231,12 @@ const TestnetTokenPairs: Record<TestnetTokenPairsKey, TokenPair> = {
+   },
+ };
+ 
+-const TestnetOracle: Oracle = {
++export const TestnetOracle: Oracle = {
+   oracle1AppId: 81298955,
+   oracle2AppId: 67734391,
+   oracleAdapterAppId: 81315545,
+   decimals: 14,
+ }
+ 
+-const TestnetReserveAddress = "5ISPVI3JMQ4MP5XWWK4ILLKJAYU34U4TGZGXNC5BKR5AK3JBVAMJYBRYEI";
++export const TestnetReserveAddress = "5ISPVI3JMQ4MP5XWWK4ILLKJAYU34U4TGZGXNC5BKR5AK3JBVAMJYBRYEI";
+ 
+-export {
+-  TestnetPoolsKey,
+-  TestnetPools,
+-  TestnetTokenPairsKey,
+-  TestnetTokenPairs,
+-  TestnetOracle,
+-  TestnetReserveAddress,
+-};
