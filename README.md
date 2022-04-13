@@ -17,6 +17,10 @@ Folks Finance Dashboard uses:
 
 The dashboard calculates key metrics using the Folks Finance JS SDK and then exposes these metrics via API endpoints. Anyone can use these endpoints to obtain key metrics and data. If key metrics are directly added to the JS SDK then some of these endpoints may no longer be required, however, for the time being they may provide useful aggregated data to devs.
 
+## Design
+
+The dashboard features custom-built visuals and components utilizing Chakra UI. In particular, the TVL metric card was inspired by [Nexus Protocol's dashboard](https://terra.nexusprotocol.app/) and is a reverse-engineered version of it.
+
 #### Endpoints:
 
 [`/api/tvl`](https://folks-finance-dashboard.vercel.app/api/tvl)
