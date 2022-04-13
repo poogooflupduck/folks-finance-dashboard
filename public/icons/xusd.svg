@@ -1,0 +1,41 @@
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+    <defs>
+        <style>.cls-1{fill:#ececec;}.cls-2{fill:url(#Sfumatura_senza_nome_6);}.cls-3{fill:url(#Sfumatura_senza_nome_9);}.cls-4{fill:url(#Sfumatura_senza_nome_14);}.cls-5{fill:url(#Sfumatura_senza_nome_15);}.cls-6{fill:url(#Sfumatura_senza_nome_19);}.cls-7{fill:url(#Sfumatura_senza_nome_17);}.cls-8{fill:url(#Sfumatura_senza_nome_12);}</style>
+        <linearGradient id="Sfumatura_senza_nome_6" x1="2.27" y1="14.22" x2="26.04" y2="14.22" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a63aec"/>
+            <stop offset="0.61" stop-color="#a63aec"/>
+            <stop offset="0.76" stop-color="#7c26c7"/>
+            <stop offset="0.99" stop-color="#7c26c7"/>
+        </linearGradient>
+        <linearGradient id="Sfumatura_senza_nome_9" x1="17" y1="13.73" x2="29.83" y2="13.73" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a63aec"/>
+            <stop offset="0.57" stop-color="#a63aec"/>
+            <stop offset="0.87" stop-color="#7c26c7"/>
+            <stop offset="0.99" stop-color="#7c26c7"/>
+        </linearGradient>
+        <linearGradient id="Sfumatura_senza_nome_14" x1="16.93" y1="21.98" x2="20.53" y2="21.98" xlink:href="#Sfumatura_senza_nome_9"/>
+        <linearGradient id="Sfumatura_senza_nome_15" x1="6.71" y1="21.18" x2="12.21" y2="21.18" xlink:href="#Sfumatura_senza_nome_9"/>
+        <linearGradient id="Sfumatura_senza_nome_19" x1="12.61" y1="26.37" x2="20.22" y2="26.37" xlink:href="#Sfumatura_senza_nome_9"/>
+        <linearGradient id="Sfumatura_senza_nome_17" x1="2.49" y1="21.92" x2="9.93" y2="21.92" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a63aec"/>
+            <stop offset="0.37" stop-color="#a63aec"/>
+            <stop offset="0.73" stop-color="#7c26c7"/>
+            <stop offset="0.99" stop-color="#7c26c7"/>
+        </linearGradient>
+        <linearGradient id="Sfumatura_senza_nome_12" x1="16.93" y1="7.59" x2="20.03" y2="7.59" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a63aec"/>
+            <stop offset="0.25" stop-color="#a63aec"/>
+            <stop offset="0.6" stop-color="#7c26c7"/>
+            <stop offset="0.99" stop-color="#7c26c7"/>
+        </linearGradient>
+    </defs>
+    <circle cx="16" cy="16" r="16"/>
+    <path class="cls-1" d="M31.89,16.94V15.62a.1.1,0,0,1,0,.09,6.86,6.86,0,0,1,0,1.11A.19.19,0,0,1,31.89,16.94Z" transform="translate(0 0)"/>
+    <path class="cls-2" d="M16.82,20.06v5.26s0,0,0,.06,0,0,0,0l-.1,0-.26-.12-1.16-.5-1.48-.65-1.33-.58c-.12-.05-.13-.06-.13-.18V17.53a0,0,0,0,0-.05,0l0,0-1,.6-1,.63L9,19.52,8.11,20l-1.37.83h0c-.17.1-.15.1-.32,0l-1.65-.72L3.18,19.5l-.66-.29a.87.87,0,0,1-.19-.1,0,0,0,0,1,0-.05l.05,0L2.49,19l1.65-1,1.24-.75,1.38-.83,1.38-.84,1.25-.75L10.77,14l1.38-.84.12-.08a.08.08,0,0,0,0-.07V3.11a.08.08,0,0,1,0,0s0,0,0,0h.07l.34.15,1,.44.83.36.92.41.86.37.29.13.08,0a.12.12,0,0,1,.05.07v5.2a0,0,0,0,0,.07,0l0,0,.07,0,.77-.46,1.08-.66,1.71-1,.94-.57.31-.18.07,0a.13.13,0,0,1,.12,0l.16.07,1.17.51,1.28.56,1.26.55L26,9l0,0a0,0,0,0,1,0,.05L26,9.1l-.47.29-1.36.83-.85.52-1.23.75-1,.61-1.22.74-.85.52-1.37.84-.71.43c-.16.1-.15.09-.15.27v5.16Z" transform="translate(0 0)"/>
+    <path class="cls-3" d="M26.25,9.11l0,0,.1.1,1.67,1.67,1.66,1.66.1.1a0,0,0,0,1,0,.07l-.07,0-.55.34-1.34.81-.86.53-1.22.74-1,.62c-.39.25-.79.49-1.19.73l-1,.62c-.39.25-.79.49-1.19.73l-.66.41-.07,0a.08.08,0,0,1-.08,0l-.09-.09-.72-.72-2.61-2.61A1.14,1.14,0,0,1,17,14.8a.06.06,0,0,1,0-.07l.07-.05.7-.42,1.34-.82.87-.53,1.2-.74,1-.61,1.23-.75.86-.52,1.35-.83.52-.31.06,0Z" transform="translate(0 0)"/>
+    <path class="cls-4" d="M16.93,20.22V15a.13.13,0,0,1,0-.06,0,0,0,0,1,0,0l0,0,.07.07,3.3,3.3.09.09a.11.11,0,0,1,0,.08v.07a.76.76,0,0,1,0,.15V28.92a.19.19,0,0,1,0,.08,0,0,0,0,1,0,0l0,0-.09-.09c-1.09-1.09-2.19-2.18-3.28-3.28,0,0,0,0,0-.05a.22.22,0,0,1-.08-.2V20.22Z" transform="translate(0 0)"/>
+    <path class="cls-5" d="M12.21,20.6v2.81a.17.17,0,0,1-.06.11l-.09.05-1,.62-.63.39c-.14.08-.14.08-.26,0L9,23.35,6.83,21.22l-.1-.12a.05.05,0,0,1,0-.09L6.81,21l.56-.34L8.7,19.8l.86-.52,1.37-.83.87-.54.28-.17.07,0s0,0,0,0,0,0,0,.05V20.6Z" transform="translate(0 0)"/>
+    <path class="cls-6" d="M20.22,29h-.08l-.93-.41L18,28l-1-.43-.8-.35-.07,0a.6.6,0,0,1-.23-.16L12.7,23.88l-.09-.11h0s0,0,0,0l.07,0,1.11.49,1.46.63,1,.44.43.18a.81.81,0,0,1,.26.18l3.17,3.17.09.1A0,0,0,0,1,20.22,29Z" transform="translate(0 0)"/>
+    <path class="cls-7" d="M9.93,24.49h0l-.07,0-.95-.41-.48-.21-.86-.37-1.47-.65a.67.67,0,0,1-.38-.25L2.61,19.5l-.11-.12a.06.06,0,0,1,0,0,0,0,0,0,1,0,0h0l.93.41.91.4.87.38L6.35,21a.68.68,0,0,1,.36.24l3.12,3.12.1.1Z" transform="translate(0 0)"/>
+    <path class="cls-8" d="M16.93,7.58V5.19a.08.08,0,0,1,0-.05h0l0,0,.08.07,2.83,2.83.1.11s0,.05,0,.06l-.09.06-.69.42L17.36,9.83l-.29.18-.08,0s0,0,0,0a.43.43,0,0,1,0,0V7.58Z" transform="translate(0 0)"/>
+</svg>
