@@ -29,7 +29,7 @@ const PoolsCard = () => {
       </Wrap>
       <Wrap>
         {data.pools.map((entry) => (
-          <WrapItem>
+          <WrapItem key={entry.symbol}>
             <Image
               src={"/icons/" + entry.symbol.toLowerCase() + ".svg"}
               width={30}

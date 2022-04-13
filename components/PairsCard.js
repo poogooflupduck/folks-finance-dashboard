@@ -29,7 +29,7 @@ const PairsCard = () => {
       </Wrap>
       <Wrap>
         {data.pairs.slice(0, 6).map((entry) => (
-          <WrapItem>
+          <WrapItem key={entry.collateralSymbol+entry.borrowSymbol}>
             <Image
               src={"/icons/" + entry.collateralSymbol.toLowerCase() + ".svg"}
               width={30}

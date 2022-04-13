@@ -20,6 +20,7 @@ const Pools = () => {
         {data &&
           data.map((pool) => (
             <GridItem
+              key={pool.symbol}
               colSpan={{ base: 2, sm: 2, md: 2, lg: 1 }}
               p={6}
               borderWidth={1}
