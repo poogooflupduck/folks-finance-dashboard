@@ -1,8 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Folks Finance Dashboard
 
-## Getting Started
+### Live Demo: https://folks-finance-dashboard.vercel.app/
 
-First, run the development server:
+Explore Folks Finance Testnet metrics
+
+There are no dedicated analytics to track its usage. Traders, investors and other stakeholders want to monitor Spin's performance using charts and metrics. Spin Finance Dashboard draws back the curtain and brings those metrics to the forefront.
+
+## Technologies
+
+Spin Finance Dashboard uses:
+
+- [Next.js](https://nextjs.org/)
+- [Folks Finance JS SDK](https://github.com/Folks-Finance/folks-finance-js-sdk/)
+- Continuous data-fetching using [SWR](https://swr.vercel.app/)
+- A responsive, mobile-friendly UI custom-built using [Chakra UI](https://chakra-ui.com/)
+
+## Dashboard API
+
+The dashboard calculates key metrics using the Folks Finance JS SDK and then exposes these metrics via API endpoints. Anyone can use these endpoints to obtain key metrics and data. If key metrics are directly added to the JS SDK then some of these endpoints may no longer be required, however, for the time being they may provide useful aggregated data to devs.
+
+#### Endpoints:
+
+[`/api/tvl`](https://folks-finance-dashboard.vercel.app/api/tvl)
+
+[`/api/allPools`](https://folks-finance-dashboard.vercel.app/api/allPools)
+
+[`/api/allPairs`](https://folks-finance-dashboard.vercel.app/api/allPairs)
+
+[`/api/borrowersCount`](https://folks-finance-dashboard.vercel.app/api/borrowersCount)
+
+[`/api/loanCount`](https://folks-finance-dashboard.vercel.app/api/loanCount)
+
+[`/api/rewardsValue`](https://folks-finance-dashboard.vercel.app/api/rewardsValue) (Testnet Rewards Aggregator limits don't seem to be configured on the JS SDK currently)
+
+## Folks Finance JS SDK
+
+The dashboard uses the Folks Finance JS SDK. No manual configuration is required to deploy the project (see the deploy button below). However, devs and the Folks Finance team should take the following into account:
+
+- The folks-finance-js-sdk module is transpiled using [next-transpile-modules](https://www.npmjs.com/package/next-transpile-modules)
+- A temporary minor patch has been applied to allow use of the JS SDK with Next.js, in the file: `node_modules/folks-finance-js-sdk/src/v1/lend/constants.ts` via `npx patch-package` (see `patches` folder). The patch exports each of the constants directly instead of exporting them all at the end of the file to prevent a [Babel isolatedModules error](https://github.com/vercel/next.js/issues/7882). The patch is applied automatically using a postinstall script (see `package.json`).
+
+## Local development
+
+Clone, run `yarn install` or `npm install` and then start the development server:
 
 ```bash
 npm run dev
@@ -12,23 +52,8 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The easiest way to deploy Folks Finance Dashboard is via Vercel:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkarlxlee%2Ffolks-finance-dashboard%2F)
