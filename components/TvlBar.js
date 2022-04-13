@@ -22,6 +22,7 @@ const colors = [
 ];
 
 let nf = new Intl.NumberFormat("en-US");
+let compactf = Intl.NumberFormat("en", { notation: "compact" });
 
 const TvlBar = () => {
   const { data, isLoading, isError } = SwrData("/api/tvl");
@@ -56,7 +57,7 @@ const TvlBar = () => {
           </Tooltip>
         ))}
       </Flex>
-      <Wrap mt={10} spacing={"2%"}>
+      <Wrap mt={14} spacing={"2%"}>
         {data.pools.map((entry, index) => (
           <WrapItem key={entry.symbol}>
             <Flex gap={2} align="baseline">
@@ -64,6 +65,7 @@ const TvlBar = () => {
               <div>
                 <Text color="darkgrey">{entry.symbol}</Text>
                 <Text>{nf.format(entry.totalLockedValue) + " USD"}</Text>
+                <Text color="grey">{compactf.format(entry.totalLocked)}</Text>
               </div>
             </Flex>
           </WrapItem>

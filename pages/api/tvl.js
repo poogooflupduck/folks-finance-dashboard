@@ -27,6 +27,7 @@ export default async function handler(req, res) {
       Number(info.totalBorrows * price) / 1e14
     );
     let totalLockedValue = totalDepositsValue - totalBorrowsValue;
+    let totalLocked = Number(info.totalDeposits - info.totalBorrows) / 1e6;
     tvl += totalDepositsValue - totalBorrowsValue;
     tvd += totalDepositsValue;
     tvb += totalBorrowsValue;
@@ -36,6 +37,7 @@ export default async function handler(req, res) {
       totalDepositsValue,
       totalBorrowsValue,
       totalLockedValue,
+      totalLocked,
       ...info,
     });
   }
