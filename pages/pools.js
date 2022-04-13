@@ -1,6 +1,7 @@
 import Head from "next/head";
+import Image from "next/image";
 import NavBar from "@/components/NavBar";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Flex } from "@chakra-ui/react";
 import SwrData from "@/components/SwrData";
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -16,7 +17,7 @@ const Pools = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <Grid templateColumns={"repeat(5, 1fr)"} gap={2}>
+      <Grid templateColumns={"repeat(5, 1fr)"} gap={2} p={2}>
         {data &&
           data.map((pool) => (
             <GridItem
@@ -26,7 +27,14 @@ const Pools = () => {
               borderWidth={1}
               borderRadius="md"
             >
-              <Box>{pool.symbol}</Box>
+              <Flex align="center">
+                <Image
+                  src={"/icons/" + pool.symbol.toLowerCase() + ".svg"}
+                  width={30}
+                  height={30}
+                />
+                <Box ml={2}>{pool.symbol}</Box>
+              </Flex>
             </GridItem>
           ))}
       </Grid>

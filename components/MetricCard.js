@@ -18,7 +18,7 @@ const MetricCard = (props) => {
     return (
       <>
         <Text>{props.label}</Text>
-        <SkeletonText fontSize="3xl" fontWeight={"bold"} noOfLines={1} />
+        <Skeleton mt={2} height="20px" />
       </>
     );
   if (isError) return <Skeleton height="20px" />;

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const links = [
   ["Overview", "/"],
-  ["Pools (WIP)", "/pools"],
+  ["Pools", "/pools"],
 ];
 
 const NavBar = () => {
@@ -16,7 +16,7 @@ const NavBar = () => {
           Analytics
         </Text>
         <Spacer />
-        <Wrap spacing={4}>
+        <Wrap spacing={5}>
           {links.map((entry) => (
             <WrapItem key={entry[1]}>
               <Link href={entry[1]}>
