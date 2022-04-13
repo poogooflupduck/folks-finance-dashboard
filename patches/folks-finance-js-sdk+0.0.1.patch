@@ -11,3 +11,16 @@ index 9cc17e4..08a23fe 100644
    TestnetPoolsKey,
    TestnetPools,
    TestnetTokenPairsKey,
+diff --git a/node_modules/folks-finance-js-sdk/src/v1/lend/types.ts b/node_modules/folks-finance-js-sdk/src/v1/lend/types.ts
+index 00acdb7..618f02a 100644
+--- a/node_modules/folks-finance-js-sdk/src/v1/lend/types.ts
++++ b/node_modules/folks-finance-js-sdk/src/v1/lend/types.ts
+@@ -131,7 +131,7 @@ interface ConversionRate {
+ 
+ type ReserveAddress = string;
+ 
+-export {
++export type {
+   Pool,
+   PoolInfo,
+   LockAndEarn,
