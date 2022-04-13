@@ -4,8 +4,6 @@
 
 Explore Folks Finance Testnet metrics
 
-There are no dedicated analytics to track its usage. Traders, investors and other stakeholders want to monitor Spin's performance using charts and metrics. Spin Finance Dashboard draws back the curtain and brings those metrics to the forefront.
-
 ## Technologies
 
 Spin Finance Dashboard uses:
