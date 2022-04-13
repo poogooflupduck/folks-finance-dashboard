@@ -65,7 +65,9 @@ const TvlBar = () => {
               <div>
                 <Text color="darkgrey">{entry.symbol}</Text>
                 <Text>{nf.format(entry.totalLockedValue) + " USD"}</Text>
-                <Text color="grey">{compactf.format(entry.totalLocked)}</Text>
+                <Text fontSize={"sm"} color="grey">
+                  {compactf.format(entry.totalLocked) + " " + entry.symbol}
+                </Text>
               </div>
             </Flex>
           </WrapItem>
