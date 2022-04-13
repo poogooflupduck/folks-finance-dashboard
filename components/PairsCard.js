@@ -15,7 +15,13 @@ import Image from "next/image";
 
 const PairsCard = () => {
   const { data, isLoading, isError } = SwrData("/api/allPairs");
-  if (isLoading) return <Skeleton height="20px" />;
+  if (isLoading)
+    return (
+      <>
+        <Text>Asset Pairs</Text>
+        <Skeleton height="20px" />
+      </>
+    );
   if (isError) return <Skeleton height="20px" />;
   return (
     <>
@@ -29,7 +35,7 @@ const PairsCard = () => {
       </Wrap>
       <Wrap>
         {data.pairs.slice(0, 6).map((entry) => (
-          <WrapItem key={entry.collateralSymbol+entry.borrowSymbol}>
+          <WrapItem key={entry.collateralSymbol + entry.borrowSymbol}>
             <Image
               src={"/icons/" + entry.collateralSymbol.toLowerCase() + ".svg"}
               width={30}

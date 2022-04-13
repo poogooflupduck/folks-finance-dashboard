@@ -26,7 +26,13 @@ let compactf = Intl.NumberFormat("en", { notation: "compact" });
 
 const TvlBar = () => {
   const { data, isLoading, isError } = SwrData("/api/tvl");
-  if (isLoading) return <Skeleton height="20px" />;
+  if (isLoading)
+    return (
+      <>
+        <Text>Total value locked</Text>
+        <Skeleton height="20px" />
+      </>
+    );
   if (isError) return <Skeleton height="20px" />;
   return (
     <>

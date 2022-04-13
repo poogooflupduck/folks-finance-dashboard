@@ -15,7 +15,12 @@ import Image from "next/image";
 
 const PoolsCard = () => {
   const { data, isLoading, isError } = SwrData("/api/tvl");
-  if (isLoading) return <Skeleton height="20px" />;
+  if (isLoading) return (
+    <>
+      <Text>Asset Pools</Text>
+      <Skeleton height="20px" />
+    </>
+  );
   if (isError) return <Skeleton height="20px" />;
   return (
     <>
