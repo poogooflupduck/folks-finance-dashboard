@@ -6,7 +6,7 @@ Explore Folks Finance Testnet metrics
 
 ## Technologies
 
-Spin Finance Dashboard uses:
+Folks Finance Dashboard uses:
 
 - [Next.js](https://nextjs.org/)
 - [Folks Finance JS SDK](https://github.com/Folks-Finance/folks-finance-js-sdk/)
