@@ -23,8 +23,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "pages/api/getBorrowTotal.js"
+    "**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
