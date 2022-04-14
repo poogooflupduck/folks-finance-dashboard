@@ -11,10 +11,6 @@ import { indexerClient } from "@/utils/config";
 
 export default async function handler(req, res) {
   const oracle = TestnetOracle;
-
-  if (req.query.length) {
-    console.log(req.query);
-  }
   let pairLoans = [];
   let totalLoanCount = 0;
   for (let pairName in TestnetTokenPairs) {

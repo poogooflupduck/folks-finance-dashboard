@@ -13,10 +13,11 @@ function sleep(ms) {
 }
 export default async function handler(req, res) {
   const oracle = TestnetOracle;
-
+  let pairUsers = [];
   let loanUsers = [];
   for (let pairName in TestnetTokenPairs) {
     console.log(pairName);
+    let pairUserList = [];
     const tokenPair = TestnetTokenPairs[pairName];
     const { collateralPool, borrowPool } = tokenPair;
 
@@ -48,9 +49,9 @@ export default async function handler(req, res) {
     for (let loan of loansInfo.loans) {
       loanUsers.findIndex((entry) => entry == loan.userAddress) === -1 &&
         loanUsers.push(loan.userAddress);
+      pairUserList.findIndex((entry) => entry == loan.userAddress) === -1 &&
+        pairUserList.push(loan.userAddress);
     }
-
-    console.log(loansInfo.loans[0]);
 
     while (nextToken !== undefined) {
       // sleep for 0.1 seconds to prevent hitting request limit
@@ -72,10 +73,14 @@ export default async function handler(req, res) {
       for (let loan of loansInfo.loans) {
         loanUsers.findIndex((entry) => entry == loan.userAddress) === -1 &&
           loanUsers.push(loan.userAddress);
+        pairUserList.findIndex((entry) => entry == loan.userAddress) === -1 &&
+          pairUserList.push(loan.userAddress);
       }
     }
+    pairUsers.push({ pairName, borrowers: pairUserList.length });
   }
   res.status(200).json({
     totalBorrowers: loanUsers.length,
+    pairs: pairUsers,
   });
 }

@@ -23,6 +23,7 @@ let nf = new Intl.NumberFormat("en-US");
 const PairCardGrid = () => {
   const { data: info } = SwrData("/api/allPairs", fetcher);
   const { data: counts } = SwrData("/api/loanCount", fetcher);
+  const { data: borrowers } = SwrData("/api/borrowersCount", fetcher);
   if (!info)
     return (
       <>
@@ -99,6 +100,25 @@ const PairCardGrid = () => {
                     {
                       counts.pairs.filter((e) => e.pairName == pair.symbol)[0]
                         .loanCount
+                    }
+                  </Text>
+                )}
+              </Flex>
+            </Box>
+            <Box borderTopWidth={1} w="full" px={6} py={3}>
+              <Flex align="center">
+                <Text>Number of borrowers</Text>
+                <Spacer />
+                {!borrowers ? (
+                  <Box w={10}>
+                    <Skeleton height="20px" />
+                  </Box>
+                ) : (
+                  <Text ml={2} color="grey">
+                    {
+                      borrowers.pairs.filter(
+                        (e) => e.pairName == pair.symbol
+                      )[0].borrowers
                     }
                   </Text>
                 )}
