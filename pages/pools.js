@@ -60,7 +60,7 @@ const PoolCardGrid = () => {
               {nf.format(pool.totalLocked)}
             </Text>
           </Flex>
-          <Box p={6} align="center">
+          <Box px={6} pt={2} pb={6} align="center">
             <CircularProgress
               value={(pool.utilizationRatio * 100) / 1e14}
               color="green.400"
@@ -82,6 +82,16 @@ const PoolCardGrid = () => {
               </Text>
             </Flex>
           </Box>
+          <Box borderTopWidth={1} w="full" px={6} py={3}>
+            <Flex align="center">
+              <Text>Deposit APR</Text>
+              <Spacer />
+              <Text ml={2} color="grey">
+                {((pool.depositInterestRate * 100) / 1e14).toFixed(2) + "%"}
+              </Text>
+            </Flex>
+          </Box>
+
         </GridItem>
       ))}
     </>
