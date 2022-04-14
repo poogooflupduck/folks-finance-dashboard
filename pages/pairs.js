@@ -21,16 +21,8 @@ const fetcher = (url) => fetch(url).then((r) => r.json());
 let nf = new Intl.NumberFormat("en-US");
 
 const PairCardGrid = () => {
-  const {
-    data: info,
-    isInfoLoading,
-    isInfoError,
-  } = SwrData("/api/allPairs", fetcher);
-  const {
-    data: counts,
-    isCountsLoading,
-    isCountsError,
-  } = SwrData("/api/loanCount", fetcher);
+  const { data: info } = SwrData("/api/allPairs", fetcher);
+  const { data: counts } = SwrData("/api/loanCount", fetcher);
   if (!info)
     return (
       <>
@@ -49,7 +41,6 @@ const PairCardGrid = () => {
           ))}
       </>
     );
-  if (isInfoError) return <Skeleton height="20px" />;
   if (info)
     return (
       <>
