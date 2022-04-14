@@ -21,8 +21,17 @@ const fetcher = (url) => fetch(url).then((r) => r.json());
 let nf = new Intl.NumberFormat("en-US");
 
 const PairCardGrid = () => {
-  const { data, isLoading, isError } = SwrData("/api/allPairs", fetcher);
-  if (isLoading)
+  const {
+    data: info,
+    isInfoLoading,
+    isInfoError,
+  } = SwrData("/api/allPairs", fetcher);
+  const {
+    data: counts,
+    isCountsLoading,
+    isCountsError,
+  } = SwrData("/api/loanCount", fetcher);
+  if (!info)
     return (
       <>
         {Array(6)
@@ -40,55 +49,74 @@ const PairCardGrid = () => {
           ))}
       </>
     );
-  if (isError) return <Skeleton height="20px" />;
-  return (
-    <>
-      {data.pairs.map((pair) => (
-        <GridItem
-          key={pair.symbol}
-          colSpan={{ base: 2, sm: 2, md: 2, lg: 1 }}
-          borderWidth={1}
-          borderRadius="md"
-        >
-          <Flex align="center" p={6}>
-            <WrapItem key={pair.collateralSymbol + pair.borrowSymbol}>
-              <Image
-                src={"/icons/" + pair.collateralSymbol.toLowerCase() + ".svg"}
-                width={30}
-                height={30}
-              />
-              <Box ml={-2} zIndex={-1}>
+  if (isInfoError) return <Skeleton height="20px" />;
+  if (info)
+    return (
+      <>
+        {info.pairs.map((pair) => (
+          <GridItem
+            key={pair.symbol}
+            colSpan={{ base: 2, sm: 2, md: 2, lg: 1 }}
+            borderWidth={1}
+            borderRadius="md"
+          >
+            <Flex align="center" p={6}>
+              <WrapItem key={pair.collateralSymbol + pair.borrowSymbol}>
                 <Image
-                  src={"/icons/" + pair.borrowSymbol.toLowerCase() + ".svg"}
+                  src={"/icons/" + pair.collateralSymbol.toLowerCase() + ".svg"}
                   width={30}
                   height={30}
                 />
-              </Box>
-            </WrapItem>
+                <Box ml={-2} zIndex={-1}>
+                  <Image
+                    src={"/icons/" + pair.borrowSymbol.toLowerCase() + ".svg"}
+                    width={30}
+                    height={30}
+                  />
+                </Box>
+              </WrapItem>
 
-            <Text ml={2}>{pair.symbol}</Text>
-            <Spacer />
-            <Text ml={2} color="grey">
-              {/* {nf.format(pair.totalLocked)} */}
-            </Text>
-          </Flex>
-          <Box px={6} pt={2} pb={6} align="center">
-            <CircularProgress
-              value={(pair.loanToValueRatio * 100) / 1e14}
-              color="green.400"
-              size={"80%"}
-            >
-              <CircularProgressLabel fontSize={"lg"}>
-                {((pair.loanToValueRatio * 100) / 1e14).toFixed(2) + "%"}
-                <br />
-                <Text fontSize="sm">LTV</Text>
-              </CircularProgressLabel>
-            </CircularProgress>
-          </Box>
-        </GridItem>
-      ))}
-    </>
-  );
+              <Text ml={2}>{pair.symbol}</Text>
+              <Spacer />
+              <Text ml={2} color="grey">
+                {/* {nf.format(pair.totalLocked)} */}
+              </Text>
+            </Flex>
+            <Box px={6} pt={2} pb={6} align="center">
+              <CircularProgress
+                value={(pair.loanToValueRatio * 100) / 1e14}
+                color="green.400"
+                size={"80%"}
+              >
+                <CircularProgressLabel fontSize={"lg"}>
+                  {((pair.loanToValueRatio * 100) / 1e14).toFixed(2) + "%"}
+                  <br />
+                  <Text fontSize="sm">LTV</Text>
+                </CircularProgressLabel>
+              </CircularProgress>
+            </Box>
+            <Box borderTopWidth={1} w="full" px={6} py={3}>
+              <Flex align="center">
+                <Text>Number of loans</Text>
+                <Spacer />
+                {!counts ? (
+                  <Box w={10}>
+                    <Skeleton height="20px" />
+                  </Box>
+                ) : (
+                  <Text ml={2} color="grey">
+                    {
+                      counts.pairs.filter((e) => e.pairName == pair.symbol)[0]
+                        .loanCount
+                    }
+                  </Text>
+                )}
+              </Flex>
+            </Box>
+          </GridItem>
+        ))}
+      </>
+    );
 };
 
 const Pairs = () => {
