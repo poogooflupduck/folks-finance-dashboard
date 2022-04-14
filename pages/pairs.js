@@ -27,7 +27,7 @@ const PairCardGrid = () => {
   if (!info)
     return (
       <>
-        {Array(6)
+        {Array(30)
           .fill("")
           .map((_, i) => (
             <GridItem
