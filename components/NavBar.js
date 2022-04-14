@@ -5,6 +5,7 @@ import Link from "next/link";
 const links = [
   ["Overview", "/"],
   ["Pools", "/pools"],
+  ["Pairs", "/pairs"],
 ];
 
 const NavBar = () => {
