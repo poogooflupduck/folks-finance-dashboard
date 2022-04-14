@@ -11,10 +11,16 @@ const NavBar = () => {
   return (
     <Box borderBottomWidth="1px" py={4} px={4}>
       <Wrap align="center">
-        <Image src="/logo_icon.svg" width={30} height={30} />
-        <Text pl={1} fontWeight="bold">
-          Analytics
-        </Text>
+        <Link href="/">
+          <a>
+            <Wrap>
+              <Image src="/logo_icon.svg" width={30} height={30} />
+              <Text pl={1} fontWeight="bold">
+                Analytics
+              </Text>
+            </Wrap>
+          </a>
+        </Link>
         <Spacer />
         <Wrap spacing={5}>
           {links.map((entry) => (
