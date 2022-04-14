@@ -91,7 +91,15 @@ const PoolCardGrid = () => {
               </Text>
             </Flex>
           </Box>
-
+          <Box borderTopWidth={1} w="full" px={6} py={3}>
+            <Flex align="center">
+              <Text>Borrow APR</Text>
+              <Spacer />
+              <Text ml={2} color="grey">
+                {((pool.borrowInterestRate * 100) / 1e14).toFixed(2) + "%"}
+              </Text>
+            </Flex>
+          </Box>
         </GridItem>
       ))}
     </>
